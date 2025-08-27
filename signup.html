@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <link rel="stylesheet" href = "{{ url_for('static', filename='css/looks.css') }}">
+    </head>
+
+    <body>
+        <div class = "navbar">
+            <h1>SASTRA Expense Tracker</h1>
+        </div>
+        <div class="container">
+            <h1><span class = "header">SignUp Page</span></h1>
+            <form action="" class="panel" method = "POST">
+                <label for="name" style="padding-left: 10px;">Name: </label>
+                <input type="text" name = "name" placeholder="Enter Your Name" required>
+                <hr style="border-top: 1px solid white;">
+                <label for="username" style="padding-left: 10px;">Username: </label>
+                <input type="text" name = "username" placeholder="Enter Username" required>
+                <hr style="border-top: 1px solid white;">
+                <label for="">Password: </label>
+                <input type="password" name = "password" placeholder="Enter Password" required>
+                <hr style="border-top: 1px solid white;">
+                <button class="button">Submit</button>
+                <p style="text-align: right;">Already Signed Up? Click Here to <a href="/login">Login</a></p>
+                {% if stat %}
+                <p style="color: red;">Username Already Exists!!! Try a Unique One</p>
+                {% endif %}
+            </form>  
+        </div>              
+    </body>
+</html>

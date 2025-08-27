@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASTRA Expense Tracker</title>
+    <link rel="stylesheet" href = "{{ url_for('static', filename='css/looks.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1 style="color: black;">Hello, {{name}}</h1>
+            <h1>Welcome To SASTRA Expense Tracker</h1>
+            <p>A simple way to keep track of your spending.</p>
+        </header>
+
+        <div class="card" id="add-expense">
+            <h2>Add a New Expense</h2>
+            <form id = "form" method="POST">
+                <div class="form">
+                    <label for="description">Description</label>
+                    <input type="text" id="description" name = "desc" placeholder="e.g. Samosa" required>
+                    <hr>
+                    <label for="amount">Amount ₹</label>
+                    <input type="number" id="amount" name = "amt" placeholder="e.g. 15" required>
+                    <hr>
+                    <label for="category">Category</label>
+                    <select id="category" name = "cat">
+                        <option>Krishna Canteen</option>
+                        <option>Southern Canopy</option>
+                        <option>Gurunath Stationary</option>
+                        <option>Prinout</option>
+                        <option>Vani Vihar</option>
+                        <option>Miscellaneous</option>
+                    </select>
+                </div>
+                <button type="submit" class="button">Add Expense</button>
+            </form>
+        </div>
+
+        <h2>Recent Expenses:</h2>
+        {%if stat%}
+        <div class="card" id="recent-expenses">
+            <h3>No Expenses......</h3>
+        </div>
+        {%else%}
+        <div class = card id = "recent-expenses">
+            <table>
+                <tr>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Category</th>
+                </tr>
+                {% for i in entries %}
+                <tr>
+                    <th>{{i.description}}</th>
+                    <th>{{i.amount}}</th>
+                    <th>{{i.category}}</th>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        {%endif%}
+        <div class="card" id="recent-expenses">
+            <h2>Total Amount Spent: {{sum}}</h2>
+        </div>
+    </div>
+
+</body>
+</html>

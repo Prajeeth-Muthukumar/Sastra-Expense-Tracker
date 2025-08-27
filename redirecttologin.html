@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang = 'en'>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SASTRA Expense Tracker</title>
+    <link rel="stylesheet" href = "{{ url_for('static', filename='css/looks.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>SASTRA Expense Tracker</h1>
+            <p>A simple way to keep track of your spending.</p>
+        </header>
+
+        <div class="card" id="recent-expenses">
+            <h1>Hello SASTRITE!!!!</h1>
+            <h2>Login To Track Your Expenses!!!</h2>
+            <h3>Click the Button to Redirect to Login Page</h3>
+            <button onclick="window.location.href = '/login'" class="button">Login Page</button>
+        </div>
+    </div>
+
+</body>
+</html>
