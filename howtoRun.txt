@@ -1,0 +1,7 @@
+How to Run the Website!!!
+  Due to Some Error I was not Able to Deploy this Website.
+  So, to run this website:
+  1. Download all the files in the directory
+  2. Run the backend.py file(make sure you have flask and FlaskSQLAlchemy Installed)
+  3. Once you run the file you'll get a website in your local host
+  4. Get to It and You'll Be Able to Access the Website
